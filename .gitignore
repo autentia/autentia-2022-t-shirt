@@ -1,0 +1,10 @@
+.idea
+.vscode
+.parcel-cache
+/node_modules
+/coverage
+/dist/
+.DS_Store
+*.pem
+npm-debug.log*
+tsconfig.tsbuildinfo
