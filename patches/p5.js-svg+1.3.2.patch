@@ -1,0 +1,10 @@
+diff --git a/node_modules/p5.js-svg/dist/p5.svg.js b/node_modules/p5.js-svg/dist/p5.svg.js
+index cc3d679..3dfa6d7 100644
+--- a/node_modules/p5.js-svg/dist/p5.svg.js
++++ b/node_modules/p5.js-svg/dist/p5.svg.js
+@@ -1,4 +1,4 @@
+-(function () {
++module.exports = (function () {
+     'use strict';
+ 
+     function toString(obj) {
