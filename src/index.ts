@@ -5,17 +5,19 @@ import logo from './logo.svg'
 p5Svg(P5)
 
 type HSL = [number, number, number]
-type Color = 'blue' | 'dark-blue' | 'pink' | 'black' | 'gray'
+type Color = 'blue' | 'dark-blue' | 'pink' | 'black' | 'gray' | 'gray-3'
 const allColors = new Map<Color, HSL>([
   ['blue', [244, 93, 60]],
   ['dark-blue', [244, 93, 20]],
   ['pink', [340, 100, 70]],
   ['gray', [0, 0, 65]],
+  ['gray-3', [0, 0, 30]],
   ['black', [18, 11, 18]],
 ])
 
 const triangleColors = new Map(allColors)
 triangleColors.delete('black')
+triangleColors.delete('gray-3')
 
 function render(p5: P5) {
   let svg: P5.Image
@@ -53,7 +55,10 @@ function render(p5: P5) {
     const columnHeight = CANVAS_HEIGHT / rows
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < columns; j++) {
+        p5.strokeWeight(1)
         p5.rect(j * columnWidth, i * columnHeight, columnWidth, columnHeight)
+        p5.stroke(getColor('gray-3'))
+
         const x = p5.random(j * columnWidth + columnWidth, j * columnWidth)
         const y = p5.random(i * columnHeight + columnHeight, i * columnHeight)
 
@@ -105,6 +110,8 @@ function render(p5: P5) {
     const [x2, y2] = coordinates[nextPoint]
     const [x3, y3] = coordinates[bottomPoint]
     p5.fill(getRandomColor())
+    p5.strokeWeight(1)
+    p5.stroke(...getColor('black'), 0.3)
     p5.triangle(x, y, x2, y2, x3, y3)
     p5.pop()
   }
