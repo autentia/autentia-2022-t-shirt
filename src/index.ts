@@ -17,7 +17,7 @@ const allColors = new Map<Color, HSL>([
 const triangleColors = new Map(allColors)
 triangleColors.delete('black')
 
-function draw(p5: P5) {
+function render(p5: P5) {
   let svg: P5.Image
   let CANVAS_HEIGHT: number
   let CANVAS_WIDTH: number
@@ -38,8 +38,8 @@ function draw(p5: P5) {
   }
 
   p5.draw = () => {
-    const columns = 20
-    const rows = 20
+    const columns = 15
+    const rows = 15
     const coordinates = generateCoordinates(rows, columns)
     generateTriangles(coordinates, rows)
     generateLogo()
@@ -110,4 +110,4 @@ function draw(p5: P5) {
   }
 }
 
-new P5(draw, document.body)
+new P5(render, document.body)
