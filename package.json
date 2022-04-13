@@ -16,8 +16,6 @@
   "license": "ISC",
   "devDependencies": {
     "@types/p5": "1.4.2",
-    "i": "0.3.7",
-    "npm": "8.6.0",
     "parcel": "2.4.1",
     "patch-package": "6.4.7",
     "prettier": "2.6.2",
